@@ -158,6 +158,26 @@ if [ "$ENABLE_WEBSOCKET" = 'yes' ]; then
     a2enmod proxy_wstunnel
 fi
 
+MODSECURITY_STATUS="${MODSECURITY_STATUS:-Off}"
+ENABLE_MODSECURITY="${ENABLE_MODSECURITY:-no}"
+if [ "$ENABLE_MODSECURITY" = 'yes' ]; then
+    MODSECURITY_STATUS="On"
+else
+    MODSECURITY_STATUS="Off"
+fi
+export MODSECURITY_STATUS=${MODSECURITY_STATUS}
+
+MODSECURITY_AUDIT_STATUS="${MODSECURITY_AUDIT_STATUS:-Off}"
+ENABLE_MODSECURITY_AUDIT="${ENABLE_MODSECURITY_AUDIT:-no}"
+if [ "$ENABLE_MODSECURITY_AUDIT" = 'yes' ]; then
+    MODSECURITY_AUDIT_STATUS="RelevantOnly"
+else
+    MODSECURITY_AUDIT_STATUS="Off"
+fi
+export MODSECURITY_AUDIT_STATUS=${MODSECURITY_AUDIT_STATUS}
+
+
+
 # Instead setting values via environment variables you can put them in the following file
 # Location of environment variable settings:
 ENVFILE="${ENVFILE:-/etc/httpd/env-override}"

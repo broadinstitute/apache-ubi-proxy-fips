@@ -19,6 +19,7 @@ nss_wrapper \
 mod_ldap \
 mod_session \
 mod_security \
+mod_security_crs \
 mod_auth_mellon \
 sscg \
 wget \
@@ -57,6 +58,7 @@ ENV HTTPD_CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/httpd/ \
 COPY ./root /
 
 RUN mkdir ${APP_ROOT}
+RUN mkdir -p /etc/ssl/private
 RUN /usr/libexec/httpd-prepare 
 
 USER 1001
