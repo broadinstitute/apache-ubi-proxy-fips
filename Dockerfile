@@ -37,6 +37,8 @@ rpm -Uivh cjose-0.6.1-2.module_el8.4.0+674+2c6c7264.x86_64.rpm mod_auth_openidc-
 
 # Add default Web page and expose port
 RUN echo "The Web Server is Running" > /var/www/html/index.html
+EXPOSE 8080
+EXPOSE 8443
 EXPOSE 80
 EXPOSE 443
 
