@@ -8,7 +8,7 @@ export LANG=C
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export TZ=America/New_York
 
-OVERRIDE_SCRIPT="/etc/apache2/override.sh"
+OVERRIDE_SCRIPT="/etc/httpd/override.sh"
 
 # update ClientID
 if [ -z "$CLIENTID" ] ; then
@@ -160,7 +160,7 @@ fi
 
 # Instead setting values via environment variables you can put them in the following file
 # Location of environment variable settings:
-ENVFILE="${ENVFILE:-/etc/apache2/env-override}"
+ENVFILE="${ENVFILE:-/etc/httpd/env-override}"
 # If there is an override script, pull it in
 if [ -f "$ENVFILE" ]; then
     # shellcheck disable=SC1090
