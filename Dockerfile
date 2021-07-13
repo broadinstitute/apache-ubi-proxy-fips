@@ -61,7 +61,10 @@ RUN mkdir ${APP_ROOT}
 RUN mkdir -p /etc/ssl/private
 RUN /usr/libexec/httpd-prepare 
 
+COPY makeSelfSigned.sh /root/
+
 USER 1001
+
 
 CMD ["/usr/bin/run-httpd"]
 
